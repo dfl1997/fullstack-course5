@@ -1,1 +1,11 @@
-<div class="loader"></div>
+<div class="row spacer" ng-repeat="item in menu.foundItems">
+    <div class="col-md-2 spacer">
+        <button type="button" class="btn btn-default" ng-click="menu.onRemove({index: $index})">
+            Don't want this one!
+        </button>
+    </div>
+    <div class="col-md-3 spacer">{{ item.name }}</div>
+    <div class="col-md-1 spacer">{{ item.short_name }}</div>
+    <div class="col-md-6 spacer">{{ item.description }}</div>
+</div>
+<div class="error" ng-if="menu.notFound()">Nothing found</div>
